@@ -76,5 +76,6 @@ npm init @eslint/config@latest
 
 npm i -D prettier
 
-npm i -D vitest 
+npm i -D vitest
+npm i -D @vitest/coverage-v8
 ```
