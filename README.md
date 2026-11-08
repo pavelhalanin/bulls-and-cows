@@ -75,4 +75,6 @@ npm init @eslint/config@latest
 # ☕️Installing...
 
 npm i -D prettier
+
+npm i -D vitest 
 ```
