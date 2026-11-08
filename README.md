@@ -73,4 +73,6 @@ npm init @eslint/config@latest
 # √ Which package manager do you want to use? · npm
 #
 # ☕️Installing...
+
+npm i -D prettier
 ```
