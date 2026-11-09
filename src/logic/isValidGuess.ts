@@ -1,9 +1,22 @@
-import { type Base } from "./createDigitValidator";
+import { createDigitValidator, type Base } from "./createDigitValidator";
 
 export const isValidGuess = (
-  _guess: string,
-  _length: number,
-  _base: Base
+  guess: string,
+  length: number,
+  base: Base
 ): boolean => {
-  return false;
+  const isDigit = createDigitValidator(base);
+  const digits: Array<string> = guess.toLowerCase().split("");
+
+  const countDigits: number = digits.length;
+  const countUniqueDigits: number = new Set<string>(digits).size;
+  if (countDigits !== countUniqueDigits) {
+    return false;
+  }
+
+  if (countDigits !== length) {
+    return false;
+  }
+
+  return digits.every((e) => isDigit(e));
 };
