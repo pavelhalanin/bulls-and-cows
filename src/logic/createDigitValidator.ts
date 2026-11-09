@@ -1,7 +1,12 @@
 export type Base = 2 | 8 | 10 | 16;
 
 export const createDigitValidator =
-  (_base: Base) =>
-  (_char: string): boolean => {
-    return false;
+  (base: Base) =>
+  (char: string): boolean => {
+    if (char.length !== 1) {
+      return false;
+    }
+
+    const index = "0123456789abcdef".indexOf(char.toLowerCase());
+    return index >= 0 && index < base;
   };
