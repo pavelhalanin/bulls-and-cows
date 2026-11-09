@@ -78,4 +78,6 @@ npm i -D prettier
 
 npm i -D vitest
 npm i -D @vitest/coverage-v8
+
+npm i -D husky
 ```
