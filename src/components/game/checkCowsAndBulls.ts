@@ -7,6 +7,7 @@ import {
   gameStateGetValue,
 } from "../../state/gameState";
 import { addGameHistory } from "../../state/history/addGameHistory";
+import { clearGameHistory } from "../../state/history/clearGameHistory";
 import { app } from "../app";
 
 export const checkCowsAndBulls = () => {
@@ -34,6 +35,9 @@ export const checkCowsAndBulls = () => {
 
   if (+length === score.bulls) {
     alert("Win!");
+    clearGameHistory();
+    app("newGame");
+    return;
   }
 
   app("game");

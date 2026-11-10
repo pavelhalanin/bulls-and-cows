@@ -1,3 +1,4 @@
+import { getGameHistory } from "../state/history/getGameHistory";
 import { gamePage } from "./game/gamePage";
 import { header } from "./header/header";
 import { newGamePage } from "./newGame/newGamePage";
@@ -15,6 +16,16 @@ export const app = (page: string = "newGame") => {
   ROOT.replaceChildren();
   ROOT.appendChild(header());
   ROOT.appendChild(DIV);
+
+  if (page !== "game") {
+    const history = getGameHistory();
+
+    if (history.length > 0) {
+      alert("Игра еще не закончена");
+      gamePage();
+      return;
+    }
+  }
 
   switch (page) {
     case "newGame":
