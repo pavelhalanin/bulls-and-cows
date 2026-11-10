@@ -6,6 +6,8 @@ import {
   gameStateGetSecret,
   gameStateGetValue,
 } from "../../state/gameState";
+import { addGameHistory } from "../../state/history/addGameHistory";
+import { app } from "../app";
 
 export const checkCowsAndBulls = () => {
   const secret = gameStateGetSecret();
@@ -20,5 +22,19 @@ export const checkCowsAndBulls = () => {
   }
 
   const score = evaluateGuess(secret, value);
-  alert(JSON.stringify(score));
+
+  addGameHistory({
+    base: +base,
+    length: +length,
+    bulls: score.bulls,
+    cows: score.cows,
+    datetime: new Date().toJSON(),
+    value: value,
+  });
+
+  if (+length === score.bulls) {
+    alert("Win!");
+  }
+
+  app("game");
 };

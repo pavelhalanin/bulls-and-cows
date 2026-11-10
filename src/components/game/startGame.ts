@@ -4,6 +4,7 @@ import {
   gameStateGetLength,
   gameStateSetSecret,
 } from "../../state/gameState";
+import { clearGameHistory } from "../../state/history/clearGameHistory";
 import { app } from "../app";
 
 export const startGame = () => {
@@ -11,6 +12,7 @@ export const startGame = () => {
   const length = gameStateGetLength();
   const secret = generateSecret(+length, base);
   gameStateSetSecret(secret);
+  clearGameHistory();
 
   app("game");
 };

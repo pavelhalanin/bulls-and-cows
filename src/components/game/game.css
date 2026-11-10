@@ -1,3 +1,7 @@
+.game__wrapper {
+  padding: 8px;
+}
+
 .gameForm {
   padding: 8px;
   display: flex;
@@ -36,4 +40,15 @@
     background-color: transparent;
     color: #06c;
   }
+}
+
+.game__history_table {
+  border-collapse: collapse;
+}
+
+.game__history_table tr th,
+.game__history_table tr td {
+  border: 1px solid black;
+  padding: 2px;
+  text-align: center;
 }

@@ -1,17 +1,20 @@
 import { gameInput } from "./gameInput";
 import "./game.css";
+import { gameHistory } from "./gameHistory";
 
 export const gamePage = () => {
-  const SELECTOR = "#content";
-  const CONTENT = document.querySelector(SELECTOR);
-  if (!CONTENT) {
-    throw new Error(`Node is not found: ${SELECTOR}`);
+  const selector = "#content";
+  const content = document.querySelector(selector);
+  if (!content) {
+    throw new Error(`Node is not found: ${selector}`);
   }
 
-  CONTENT.replaceChildren();
+  content.replaceChildren();
 
-  const DIV = document.createElement("div");
-  DIV.appendChild(gameInput());
+  const div = document.createElement("div");
+  div.classList.add("game__wrapper");
+  div.appendChild(gameInput());
+  div.appendChild(gameHistory());
 
-  CONTENT.append(DIV);
+  content.append(div);
 };
