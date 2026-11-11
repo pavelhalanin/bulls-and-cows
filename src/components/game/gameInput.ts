@@ -52,7 +52,7 @@ export const gameInput = () => {
 
   const button = document.createElement("button");
   button.classList.add("game_form__button");
-  button.textContent = "Send";
+  button.textContent = "Отгадал?";
   button.onclick = () => checkCowsAndBulls();
 
   div.appendChild(input);
