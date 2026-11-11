@@ -8,7 +8,6 @@ import {
 } from "../../state/gameState";
 import { removeStartGame } from "../../state/gameStatus/removeStartGame";
 import { addGameHistory } from "../../state/history/addGameHistory";
-import { clearGameHistory } from "../../state/history/clearGameHistory";
 import { getGameHistory } from "../../state/history/getGameHistory";
 import { addGameWinner } from "../../state/winners/addGameWinner";
 import { app } from "../app";
@@ -37,8 +36,6 @@ export const checkCowsAndBulls = () => {
   });
 
   if (+length === score.bulls) {
-    alert("Win!");
-
     const history = getGameHistory();
     const lastIndex = history.length - 1;
 
@@ -52,9 +49,8 @@ export const checkCowsAndBulls = () => {
       length: history[lastIndex].length,
     });
 
-    clearGameHistory();
     removeStartGame();
-    app("newGame");
+    app("game");
     return;
   }
 

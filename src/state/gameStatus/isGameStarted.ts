@@ -10,6 +10,15 @@ export const isGameStarted = (): boolean => {
   }
 
   const history = getGameHistory();
+
+  for (let i = 0; i < history.length; i++) {
+    const current = history[i];
+    if (current.length === current.bulls) {
+      removeStartGame();
+      return false;
+    }
+  }
+
   if (history.length > 0) {
     setStartGame();
     return true;

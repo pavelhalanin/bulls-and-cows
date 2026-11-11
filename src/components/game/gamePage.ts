@@ -1,6 +1,7 @@
 import { gameInput } from "./gameInput";
 import "./game.css";
 import { gameHistory } from "./gameHistory";
+import { gameStatus } from "./gameStatus";
 
 export const gamePage = () => {
   const selector = "#content";
@@ -13,6 +14,7 @@ export const gamePage = () => {
 
   const div = document.createElement("div");
   div.classList.add("game__wrapper");
+  div.appendChild(gameStatus());
   div.appendChild(gameInput());
   div.appendChild(gameHistory());
 
