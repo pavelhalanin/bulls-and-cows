@@ -2,6 +2,7 @@ import { getGameHistory } from "../state/history/getGameHistory";
 import { gamePage } from "./game/gamePage";
 import { header } from "./header/header";
 import { newGamePage } from "./newGame/newGamePage";
+import { gameWinnersPage } from "./winners/gameWinnersPage";
 
 export const app = (page: string = "newGame") => {
   const SELECTOR = "#app";
@@ -34,6 +35,10 @@ export const app = (page: string = "newGame") => {
 
     case "game":
       gamePage();
+      return;
+
+    case "winners":
+      gameWinnersPage();
       return;
   }
 };

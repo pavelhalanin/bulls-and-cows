@@ -8,6 +8,8 @@ import {
 } from "../../state/gameState";
 import { addGameHistory } from "../../state/history/addGameHistory";
 import { clearGameHistory } from "../../state/history/clearGameHistory";
+import { getGameHistory } from "../../state/history/getGameHistory";
+import { addGameWinner } from "../../state/winners/addGameWinner";
 import { app } from "../app";
 
 export const checkCowsAndBulls = () => {
@@ -35,6 +37,20 @@ export const checkCowsAndBulls = () => {
 
   if (+length === score.bulls) {
     alert("Win!");
+
+    const history = getGameHistory();
+    const lastIndex = history.length - 1;
+
+    addGameWinner({
+      diffDateTime:
+        new Date(history[lastIndex].datetime).getTime() -
+        new Date(history[0].datetime).getTime(),
+      datetime: new Date().toJSON(),
+      attempts: history.length,
+      base: history[lastIndex].base,
+      length: history[lastIndex].length,
+    });
+
     clearGameHistory();
     app("newGame");
     return;

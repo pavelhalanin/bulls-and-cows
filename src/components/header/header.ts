@@ -1,10 +1,11 @@
-import { headerNewGameButton } from "./headerNewGameButton";
 import "./header.css";
+import { headerNewGameButton } from "./headerNewGameButton";
+import { headerWinnersButton } from "./headerWinnersButton";
 
 export const header = () => {
-  const DIV = document.createElement("div");
-  DIV.classList.add("header");
-
-  DIV.appendChild(headerNewGameButton());
-  return DIV;
+  const div = document.createElement("div");
+  div.classList.add("header");
+  div.appendChild(headerNewGameButton());
+  div.appendChild(headerWinnersButton());
+  return div;
 };

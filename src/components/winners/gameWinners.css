@@ -1,0 +1,14 @@
+.game_winners__wrapper {
+  padding: 8px;
+}
+
+.game__winner_table {
+  border-collapse: collapse;
+}
+
+.game__winner_table tr th,
+.game__winner_table tr td {
+  border: 1px solid black;
+  padding: 2px;
+  text-align: center;
+}
