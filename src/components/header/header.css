@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  background-color: #06c;
+  padding: 8px;
+  gap: 8px;
+}
+
+.header > button {
+  border: 1px solid rgb(248, 249, 250);
+  background-color: transparent;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.header > span {
+  border: 2px solid gray;
+  border-radius: 4px;
+  background-color: gray;
+  padding: 4px 8px;
+  color: white;
+  cursor: help;
+}

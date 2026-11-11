@@ -1,0 +1,55 @@
+.newGame__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+}
+
+.newGame__radio {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.newGame__radio label {
+  width: 64px;
+  height: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #06c;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.newGame__radio input:checked + label {
+  background-color: #06c;
+  color: white;
+}
+
+.newGame__radio label.disabled {
+  color: red;
+  pointer-events: none;
+  background-color: gray;
+  border-color: gray;
+  color: white;
+}
+
+.newGame__formButton {
+  border: 1px solid rgb(25, 135, 84);
+  background-color: rgb(25, 135, 84);
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  max-width: 120px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.newGame__formButton:hover {
+  background-color: transparent;
+  color: rgb(25, 135, 84);
+}
