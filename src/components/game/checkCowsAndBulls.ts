@@ -6,6 +6,7 @@ import {
   gameStateGetSecret,
   gameStateGetValue,
 } from "../../state/gameState";
+import { removeStartGame } from "../../state/gameStatus/removeStartGame";
 import { addGameHistory } from "../../state/history/addGameHistory";
 import { clearGameHistory } from "../../state/history/clearGameHistory";
 import { getGameHistory } from "../../state/history/getGameHistory";
@@ -52,6 +53,7 @@ export const checkCowsAndBulls = () => {
     });
 
     clearGameHistory();
+    removeStartGame();
     app("newGame");
     return;
   }
